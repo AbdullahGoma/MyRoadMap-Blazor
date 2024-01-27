@@ -1,0 +1,72 @@
+﻿@page "/Product/Edit/{id:int}"
+@inject ProductRepository productRepo
+@inject CategoryRepository categoryRepo
+
+<h3>ProductEdit</h3>
+
+
+<EditForm Model="Product">
+    <div>
+        <label>Name</label>
+        <InputText @bind-Value="Product.Name" class="form-control"></InputText>
+    </div>
+
+    <div>
+        <label>Price</label>
+        <InputNumber @bind-Value="Product.Price" class="form-control"></InputNumber>
+    </div>
+
+    <div>
+        <label>Image</label>
+        <InputText @bind-Value="Product.Img" class="form-control"></InputText>
+    </div>
+
+    <div>
+        <label>Category ID</label>
+        <InputSelect @bind-Value="Product.CategoryID" class="form-control">
+            @foreach (var item in Categories)
+            {
+                <option value="@item.ID">@item.Name</option>
+            }
+        </InputSelect>
+    </div>
+
+    <input type="submit" value="Save" />
+
+</EditForm>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category ID</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>@Product.ID</td>
+            <td>@Product.Name</td>
+            <td>@Product.Price</td>
+            <td>@Product.CategoryID</td>
+            <td>@Product.Description</td>
+        </tr>
+    </tbody>
+</table>
+
+
+@code {
+    [Parameter]
+    public int ID { set; get; }
+    public Product Product { set; get; } 
+    public List<Category> Categories { set; get; }
+    protected override void OnInitialized()
+    {
+        Product = productRepo.GetProductById(ID);
+        Categories = categoryRepo.GetCategories();
+        base.OnInitialized();
+    }
+}

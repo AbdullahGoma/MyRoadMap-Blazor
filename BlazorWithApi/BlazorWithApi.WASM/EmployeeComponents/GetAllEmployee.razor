@@ -1,0 +1,30 @@
+﻿@page "/Employee"
+@inject IService<Employee> EmployeeService
+
+<h3>GetAllEmployee</h3>
+
+@if(Employees != null)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Salary</th>
+                <th>Department ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Employees)
+            {
+                <tr>
+                    <td>@employee.Name</td>
+                    <td>@employee.Img</td>
+                    <td>@employee.Salary</td>
+                    <td>@employee.DepartmentID</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

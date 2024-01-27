@@ -1,0 +1,13 @@
+﻿<h3>Students</h3>
+
+@code {
+    public SampleData Data;
+    public Students()
+    {
+        Data = new SampleData();
+    }
+
+    public List<Department> GetDepartments() => Data.GetDepartments();
+
+
+}

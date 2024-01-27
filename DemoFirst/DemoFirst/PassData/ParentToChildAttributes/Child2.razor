@@ -1,0 +1,32 @@
+﻿
+
+@* <input placeholder="@Placeholder" maxlength="@MaxLength" required="@Required" class="form-control" /> *@
+<div style="border:2px solid red">
+    <h3>Child2</h3>
+    <input @attributes="@MyAttributes" required="@Required" class="form-control" />
+</div>
+
+
+
+
+@code {
+    // Key => string, Value => Object
+    // html Attibutes as key, value
+    [Parameter(CaptureUnmatchedValues = true)] // Catch any parameter come from parent
+    public Dictionary<string, object> MyAttributes { get; set; } = 
+                                             new Dictionary<string, object>();
+
+    public Child2()
+    {
+        // MyAttributes.Add("placeholder", "Enter Your Name");
+        MyAttributes.Add("maxlength", 20);
+        // MyAttributes.Add("required", "required");
+    }
+
+    // [Parameter]
+    // public int MaxLength { set; get; } = 20;
+    // [Parameter]
+    // public string Placeholder { set; get; } = "Enter Your Name";
+    [Parameter]
+    public string Required { get; set; } = "required";
+}

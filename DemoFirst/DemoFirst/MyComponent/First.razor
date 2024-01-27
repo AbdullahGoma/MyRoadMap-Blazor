@@ -1,0 +1,41 @@
+﻿@page "/MyFirst"
+
+<h3>First</h3>
+<!-- Handle Event Using C# -->
+<input type="button" @onclick="func" value="Click Me" class="btn btn-success" />
+<h1>One Way Binding from C# to HTML</h1>
+@x
+<h2>@x</h2>
+
+<input value="@x" class="form-control" />
+
+
+<h2>Two Way Binding C# to HTML and from HTML to C#</h2>
+
+<input @bind="x" class="form-control" />        <!--Select tag-->
+<input @bind-value="x" class="form-control" />  <!--Input tag-->
+
+
+
+<h2>Two Way Binding with update</h2>
+
+<input @bind="x" @bind:event="oninput" class="form-control" />
+<input @bind-value="x" @bind-value:event="oninput" class="form-control" />
+
+@code {
+    // Class First : ComponentBase
+
+    public int x { get; set; } 
+
+    public First()
+    {
+        x = 10;
+    }
+
+    public void func()
+    {
+        x = x * x;
+        Console.WriteLine($"Handle From C# {x}");
+    }
+
+}

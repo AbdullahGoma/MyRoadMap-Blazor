@@ -1,0 +1,30 @@
+﻿@page "/Product"
+@inject ProductRepository productRepository
+<h3>AllProducts</h3>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category ID</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var product in Products)
+        {
+            <tr>
+                <td>@product.ID</td>
+                <td>@product.Name</td>
+                <td>@product.Price</td>
+                <td>@product.CategoryID</td>
+                <td>@product.Description</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

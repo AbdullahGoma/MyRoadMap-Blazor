@@ -1,0 +1,28 @@
+﻿@page "/employee/Details/{id:int}"
+@inject IService<Employee> EmployeeService
+
+<h3>DetailsEmployee</h3>
+
+@if(employee != null)
+{
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Salary</th>
+                <th>Department ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@employee.Name</td>
+                <td>@employee.Img</td>
+                <td>@employee.Salary</td>
+                <td>@employee.DepartmentID</td>
+            </tr>
+        </tbody>
+    </table>
+}
+

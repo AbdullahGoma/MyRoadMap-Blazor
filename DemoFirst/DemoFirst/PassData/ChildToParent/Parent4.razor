@@ -1,0 +1,16 @@
+﻿@page "/parent4"
+<h3>Parent4</h3>
+
+<Child4 DataChangeEvent="GetDataHandle"></Child4> <!--Register Subscribe-->
+
+<h2>@Msg </h2>
+
+@code {
+    public string Msg { get; set; }
+
+    void GetDataHandle(string Data)
+    {
+        Console.WriteLine("Handle Event From Parent");
+        Msg = Data;
+    }
+}

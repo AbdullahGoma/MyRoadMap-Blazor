@@ -1,0 +1,11 @@
+F:\ITI-Course\8- Blazor\BlazorWithApi\BlazorWithApi.Share\bin\Debug\net6.0\BlazorWithApi.Share.deps.json
+F:\ITI-Course\8- Blazor\BlazorWithApi\BlazorWithApi.Share\bin\Debug\net6.0\BlazorWithApi.Share.dll
+F:\ITI-Course\8- Blazor\BlazorWithApi\BlazorWithApi.Share\bin\Debug\net6.0\BlazorWithApi.Share.pdb
+F:\ITI-Course\8- Blazor\BlazorWithApi\BlazorWithApi.Share\obj\Debug\net6.0\BlazorWithApi.Share.GeneratedMSBuildEditorConfig.editorconfig
+F:\ITI-Course\8- Blazor\BlazorWithApi\BlazorWithApi.Share\obj\Debug\net6.0\BlazorWithApi.Share.AssemblyInfoInputs.cache
+F:\ITI-Course\8- Blazor\BlazorWithApi\BlazorWithApi.Share\obj\Debug\net6.0\BlazorWithApi.Share.AssemblyInfo.cs
+F:\ITI-Course\8- Blazor\BlazorWithApi\BlazorWithApi.Share\obj\Debug\net6.0\BlazorWithApi.Share.csproj.CoreCompileInputs.cache
+F:\ITI-Course\8- Blazor\BlazorWithApi\BlazorWithApi.Share\obj\Debug\net6.0\BlazorWithApi.Share.dll
+F:\ITI-Course\8- Blazor\BlazorWithApi\BlazorWithApi.Share\obj\Debug\net6.0\refint\BlazorWithApi.Share.dll
+F:\ITI-Course\8- Blazor\BlazorWithApi\BlazorWithApi.Share\obj\Debug\net6.0\BlazorWithApi.Share.pdb
+F:\ITI-Course\8- Blazor\BlazorWithApi\BlazorWithApi.Share\obj\Debug\net6.0\ref\BlazorWithApi.Share.dll

@@ -1,0 +1,16 @@
+﻿@page "/Student/Details/{id:int}/{name}"
+
+
+
+<h3>PersonDetails</h3>
+
+<h1>id = @id</h1>
+<h1>name = @name</h1>
+
+@code {
+    // Public Property with the same parameter name & [Parameter]
+    [Parameter] // Search about this property in route
+    public int id { get; set; }
+    [Parameter]
+    public string name { get; set; }
+}

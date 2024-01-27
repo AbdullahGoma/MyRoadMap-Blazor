@@ -1,0 +1,67 @@
+﻿@page "/Employee/Edit/{id:int}"
+@inject EmployeeService employeeService
+@inject DepartmentService departmentService
+@* @inject NavigationManager navManager *@
+<h3>EditEmployee</h3>
+
+@if(Emp != null)
+{
+    if(DataSaved == false)
+    {
+        <!--Binding input ==> object property, validation-->
+        <EditForm Model="Emp" OnInvalidSubmit="Invalid" OnValidSubmit="Save">
+            <DataAnnotationsValidator></DataAnnotationsValidator>
+            <ValidationSummary></ValidationSummary>
+            <div>
+                <label>Name</label>
+                <InputText @bind-Value="Emp.Name" class="form-control"></InputText>
+                <ValidationMessage For="() => Emp.Name" class="text-danger"></ValidationMessage>
+            </div>
+
+            <div>
+                <label>Salary</label>
+                <InputNumber @bind-Value="Emp.Salary" class="form-control"></InputNumber>
+                @* <ValidationMessage For="() => Emp.Salary" class="text-danger"></ValidationMessage> *@
+                <ValidationMessage For=@(() => Emp.Salary) class="text-danger"></ValidationMessage>
+            </div>
+
+            <div>
+                <label>Image</label>
+                <InputText @bind-Value="Emp.Img" class="form-control"></InputText>
+                <ValidationMessage For="() => Emp.Img" class="text-danger"></ValidationMessage>
+            </div>
+
+            <div>
+                <label>Department ID</label>
+                @* <InputNumber @bind-Value="Emp.DepartmentID"></InputNumber> *@
+                <InputSelect @bind-Value="Emp.DepartmentID" class="form-control">
+                    @foreach (var item in departments)
+                    {
+                        <option value="@item.ID">@item.Name</option>
+                    }
+                </InputSelect>
+                <ValidationMessage For="() => Emp.DepartmentID" class="text-danger"></ValidationMessage>
+            </div>
+
+            <input type="submit" value="Save" />
+
+        </EditForm>
+
+
+        @Emp.Name
+        @Emp.Salary
+        @Emp.Img
+        @Emp.DepartmentID
+    }
+    else
+    {
+        <h1>Conguraulation, Data Saved</h1>
+        <a href="/Employee/Details/@Emp.ID">Back To List</a>
+    }
+
+}
+else
+{
+    <h1>Wait... </h1>
+}
+

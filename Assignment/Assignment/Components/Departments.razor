@@ -1,0 +1,84 @@
+﻿@page "/Department"
+<h3>Departments</h3>
+
+<label>Select Department Name: </label>
+<select @bind="DepartmentID" @bind:event="oninput" class="form-control">
+    @foreach (var item in GetDepartments())
+    {
+        <option value="@item.ID">@item.Name</option>
+    }
+</select>
+
+<br />
+
+@* <input type="button" @onclick="OnClick" value="Get Data" /> *@
+
+
+@if (DepartmentID == 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Department ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var std in GetStudents())
+            {
+                <tr>
+                    <td>@std.ID</td>
+                    <td>@std.Name</td>
+                    <td>@std.Address</td>
+                    <td>@std.DepartmentID</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Department ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var std in GetAllStudents())
+            {
+                <tr>
+                    <td>@std.ID</td>
+                    <td>@std.Name</td>
+                    <td>@std.Address</td>
+                    <td>@std.DepartmentID</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@code {
+    public int DepartmentID { get; set; }
+    public GetData Data { get; set; }
+
+    public Departments()
+    {
+        Data = new GetData();
+    }
+
+    public List<Department> GetDepartments() => Data.GetDepartments();
+
+    public List<Student> GetStudents() => Data.GetStudents();
+
+    public void OnClick() => GetAllStudents();
+
+    public List<Student> GetAllStudents() => Data.GetStudentByDepartmentID(DepartmentID);
+
+}

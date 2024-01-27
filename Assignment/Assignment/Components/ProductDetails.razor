@@ -1,0 +1,34 @@
+﻿@page "/Product/Details/{id:int}"
+@inject ProductRepository productRepository
+
+<h3>ProductDetails</h3>
+
+<label>Select Product Name: </label>
+<select @bind="ID" @bind:event="oninput" class="form-control">
+    @foreach (var item in GetProducts())
+    {
+        <option value="@item.ID">@item.Name</option>
+    }
+</select>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Category ID</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>@Product.ID</td>
+            <td>@Product.Name</td>
+            <td>@Product.Price</td>
+            <td>@Product.CategoryID</td>
+            <td>@Product.Description</td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,22 @@
+﻿@page "/Person"
+
+<h3>PersonComponent</h3>
+
+@Person.Name
+
+
+<input @bind-value="@Person.Name" @bind-value:event="oninput" />
+
+<select @bind="PersonID" @bind:event="oninput" class="form-control" @onchange="GetDetails" >
+    @foreach (var item in Persons)
+    {
+        <option value="@item.ID">@item.Name</option>
+    }
+</select>
+
+<input type="button" @onclick="GetDetails" value="Get Data" />
+
+<h1>@PersonID</h1>
+<h1>@Person.Name</h1>
+
+

@@ -1,0 +1,12 @@
+﻿@page "/parent1"
+
+<h3>Parent1</h3>
+
+<Child1 Message="Hello From Parent to Child"></Child1>
+<Child1 Message="@Msg"></Child1>
+
+
+
+@code {
+    public string Msg { get; set; } = "Default Value";
+}

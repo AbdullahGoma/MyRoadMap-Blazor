@@ -1,0 +1,13 @@
+﻿@page "/parent3"
+
+<h3>Parent3</h3>
+
+<CascadingValue Name="Child3Msg" Value="@Msg">
+    <CascadingValue Name="Age" Value="22">
+        <Child3_1 ID="1"></Child3_1>
+    </CascadingValue>
+</CascadingValue>
+
+@code {
+    public string Msg { get; set; } = "Hello from parent 3";
+}
